@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+{typedef struct element
+int val;
+struct element *suivant;
+}element;
+    element *liste =creerliste(){
+        element*nouveauliste =malloc(sizeof(liste));
+        if (nouveauliste != null){
+       nouveauliste -> tete = null;
+       nouveauliste -> queue = null;
+        }return null;
+    }
+    element *chargerliste(int tab[],int n, element *liste){
+        for (i=0;i<n;i++)//tab تمر وتكرر على جميع عناصر الجدول 
+        { element *nouveau = (element*)malloc(sizeof(element))//حجز عنصر جديد في الذاكرة
+        nouveau ->val = tab[i];//وضع قيمة العنصر الجديد من الجدول في القائمة 
+        nouveau -> suivant = liste;//العنصر الجديد يشير الى بداية القائمة 
+        liste = nouveau;//تحديث بداية القائمة ليصبح العنصر الجديد هو الاول 
+        }return liste;
+    }
+        void afficher(element*L)
+    printf("L:");
+    while(L!=null)//التكرار حتى نصل الي نهاية القائمة 
+    ¤printf("%d->",liste -> val);//طباعة قيمة العنصرالحالي 
+    liste = liste -> suivant;//الانتقال الى العنصر التالي 
+    }
+    printf("null\n");//طباعة نهاية القائمة 
+    }
+       element *suprimerEnFin(element*L)
+       {
+           if(L->suivant==null)//اذا كانت القائمة تحتوي على عنصر واحد فقط 
+           {free(L);//حذف هذا العنصر
+           return null;}//نعيد قائمة فارغة
+           element*courant = L//مؤشر للتنقل في القائمة
+           while(courant->suivant!=null)
+           courant = courant->suivant;//ننتقل حتى نصل الى العنصر ماقبل الاخير
+       free(courant->suivant);//نحذف العنصر الاخير
+       return L;//نعيد بداية القائمة 
+       }
+           element *ajouterEnDebut(element*L,int valeur){
+               element*nouveau=(element*)malloc(sizeof(element))//حجز مكان للعنصر الجديد
+               nouveau ->val=valeur;//تعيين القيمة للعنصر الجديد
+               nouveau ->suivant=L;//ربط العنصر الجديد ببداية القائمة الحلية
+              } return nouveau;//اعادة العنصر الجديد كبداية للقائمة 
+              void viderliste(element*L){
+              element*temp;//مؤشر مؤقت لحفظ العنصر الحالي
+              while(L!=null)//بما ان القائمة فارغة
+              {temp = L;//tempنقوم بحفظ قيمة العنصر الحالي في 
+               L =L ->suivant;//الانتقال الى العنصر التالي
+               free(temp);//حذف العنصر الحالي
+              }}
